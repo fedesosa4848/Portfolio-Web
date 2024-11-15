@@ -1,0 +1,45 @@
+.marquee-container {
+    width: 100%;            /* El contenedor ocupa todo el ancho */
+    overflow: hidden;       /* Oculta el texto que sale del contenedor */
+    position: relative;     /* Necesario para animar el texto dentro del contenedor */
+    background-color: #000; /* Fondo oscuro para resaltar el texto (opcional) */
+  }
+  
+  .marquee-text {
+    display: inline-block;  /* Necesario para que el texto se mueva en una línea */
+    white-space: nowrap;    /* Asegura que el texto no se divida en líneas */
+    font-family: 'Doto', sans-serif; /* Usar la fuente Doto */
+    font-size: 30px;        /* Tamaño del texto */
+    color: #fff;            /* Color del texto (blanco) */
+    animation: marquee 10s linear infinite; /* Aplica la animación */
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; /* Efecto de neón */
+    animation: marquee 10s linear infinite;
+    /* Agregar opacidad y desfase */
+    opacity: 0; /* Empieza invisible */
+    animation: marquee 10s linear infinite, fadeIn 1s ease forwards; /* Anima la opacidad */
+  }
+
+    
+  
+  
+  /* Animación de desplazamiento */
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%); /* Comienza fuera del borde derecho */
+    }
+    100% {
+      transform: translateX(-100%); /* Termina fuera del borde izquierdo */
+    }
+  }
+  /* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% {
+      opacity: 0; /* Comienza invisible */
+  }
+  20% {
+      opacity: 0.2; /* Ligeramente visible */
+  }
+  100% {
+      opacity: 1; /* Totalmente visible */
+  }
+}

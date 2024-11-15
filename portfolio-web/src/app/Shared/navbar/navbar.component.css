@@ -1,0 +1,52 @@
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Los botones se mueven a la siguiente línea cuando no hay espacio */
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    min-width: 100px; /* Ajusta el valor según el contenido */
+    text-decoration: none;
+    border-radius: 1rem;
+    background-color: var(--blood-red);
+    color: var(--silver);
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease; /* Añade transiciones suaves para color y fondo */
+}
+
+a:hover {
+    background-color: var(--cornell-red); /* Cambia el fondo a un rojo más claro */
+    color: var(--white); /* Cambia el color del texto a blanco */
+    transform: scale(1.1); /* Hace un pequeño zoom */
+}
+
+nav {
+    max-width: 100%;
+    width: auto;
+    margin: auto;
+}
+
+* {
+    box-sizing: border-box; /* Evita el desbordamiento */
+}
+
+/* Media query para pantallas menores a 700px */
+@media screen and (max-width: 700px) {
+    ul {
+        flex-direction: column; /* Cambia a columna cuando la pantalla es pequeña */
+        align-items: center; /* Centra los elementos en la columna */
+    }
+
+    a {
+        min-width: unset; /* Elimina el ancho mínimo para que los botones se ajusten */
+        padding: 0.5rem 1.2rem; /* Aumenta ligeramente el padding para que se vean más grandes */
+        transform: scale(1.1); /* Aumenta un poco el tamaño de los botones */
+    }
+}
