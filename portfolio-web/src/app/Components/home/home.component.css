@@ -1,0 +1,89 @@
+main {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 0 1rem; /* Espaciado en los bordes para pantallas pequeñas */
+}
+
+#experiencia {
+    padding: 2rem;
+    color: var(--timberwolf);
+}
+
+.experiencia .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden verticalmente en pantallas pequeñas */
+}
+
+.experiencia__foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+}
+
+.experiencia__descripcion h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.experiencia__descripcion p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    main {
+        max-width: 90%; /* Reduce el ancho en pantallas medianas */
+    }
+
+    .experiencia__descripcion h2 {
+        font-size: 1.8rem;
+    }
+
+    .experiencia__descripcion p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .experiencia .container {
+        flex-direction: column; /* Cambia a disposición vertical */
+        text-align: center; /* Centra el contenido */
+    }
+
+    .experiencia__foto img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        width: 120px; /* Ajusta el tamaño de la foto */
+        height: 120px;
+    }
+
+    .experiencia__descripcion h2 {
+        font-size: 1.6rem;
+    }
+
+    .experiencia__descripcion p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experiencia {
+        padding: 1.5rem; /* Reduce el padding en pantallas muy pequeñas */
+    }
+
+    .experiencia__descripcion h2 {
+        font-size: 1.4rem;
+    }
+
+    .experiencia__descripcion p {
+        font-size: 0.9rem;
+    }
+}
