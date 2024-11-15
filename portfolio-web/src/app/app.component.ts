@@ -10,4 +10,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'portfolio-web';
+
+   // Método para desplazar hacia la sección
+   scrollTo(id: string): void {
+    const element = document.getElementById(id);
+    if (element) {
+      // Desplazarse suavemente a la sección
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

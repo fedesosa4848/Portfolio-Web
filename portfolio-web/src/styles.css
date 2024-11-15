@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+
+/* Variables de color */
+:root {
+--night: #0b090aff;
+--eerie-black: #161a1dff;
+--blood-red: #660708ff;
+--cornell-red: #a4161aff;
+--cornell-red-2: #ba181bff;
+--imperial-red: #e5383bff;
+--silver: #b1a7a6ff;
+--timberwolf: #d3d3d3ff;
+--white-smoke: #f5f3f4ff;
+--white: #ffffffff;
+}
+
+/* Reset y base global */
+html {
+box-sizing: border-box;
+font-size: 100%; /* Puedes ajustar aquí si prefieres un tamaño base diferente */
+}
+
+*, *::before, *::after {
+box-sizing: inherit;
+}
+
+body {
+margin: 0 auto;
+padding: 0;
+font-family: Arial, sans-serif; /* Puedes personalizar la fuente aquí */
+color: var(--white-smoke);
+background-color: var(--night);
+max-width: 1300px;
+
+}

@@ -1,0 +1,72 @@
+/* src/styles.css */
+
+/* Estilos generales */
+.marquee-container {
+    width: 100%;            /* El contenedor ocupa todo el ancho */
+    overflow: hidden;       /* Oculta el texto que sale del contenedor */
+    position: relative;     /* Necesario para animar el texto dentro del contenedor */
+    background-color: #000; /* Fondo oscuro para resaltar el texto (opcional) */
+  }
+  
+  .marquee-text {
+    display: inline-block;  /* Necesario para que el texto se mueva en una línea */
+    white-space: nowrap;    /* Asegura que el texto no se divida en líneas */
+    font-family: 'Doto', sans-serif; /* Usar la fuente Doto */
+    font-size: 30px;        /* Tamaño del texto */
+    color: #fff;            /* Color del texto (blanco) */
+    animation: marquee 10s linear infinite; /* Aplica la animación */
+  }
+
+  .marquee-text {
+    font-family: 'Doto', sans-serif;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000; /* Efecto de neón */
+    animation: marquee 10s linear infinite;
+  }
+  
+  
+  /* Animación de desplazamiento */
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%); /* Comienza fuera del borde derecho */
+    }
+    100% {
+      transform: translateX(-100%); /* Termina fuera del borde izquierdo */
+    }
+  }
+  
+  .tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta los logos en varias columnas */
+    gap: 20px; /* Espacio entre los logos */
+    justify-items: center; /* Centra los logos horizontalmente dentro de cada celda */
+    align-items: center; /* Centra los logos verticalmente dentro de cada celda */
+    margin: 10% 25%; /* Margen superior e inferior del 10%, márgenes izquierdo y derecho del 25% */
+    justify-content: center; /* Centra el contenido de las filas incompletas */
+  }
+  
+  .tool-logo {
+    width: 80px; /* Ancho del logo */
+    height: auto; /* Mantener la proporción */
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); /* Sombra más suave */
+  }
+  
+  .tool-logo:first-child {
+    width: 60px; /* Tamaño diferente para el primer logo */
+  }
+  
+  .tool-logo:hover {
+    transform: scale(1.1); /* Efecto de hover */
+  }
+  
+  @media (max-width: 600px) {
+    .tool-logo {
+      width: 30px; /* Reducir el tamaño en pantallas pequeñas */
+    }
+  
+    .tool-logo:first-child {
+      width: 30px;
+    }
+  }
