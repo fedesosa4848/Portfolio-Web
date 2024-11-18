@@ -1,4 +1,4 @@
-<div>
+<div class="skills">
     <h3>Skills</h3>
     <div class="tools-container">
         <div class="tool-item" *ngFor="let tool of tools">
@@ -8,3 +8,5 @@
         </div>
     </div>
 </div>
+
+<app-tech-progress [progress]="selectedProgress"></app-tech-progress>

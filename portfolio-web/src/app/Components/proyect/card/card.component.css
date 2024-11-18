@@ -1,81 +1,150 @@
 .project-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: 7rem;
-  }
-  
-  .arrow {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    transition: opacity 0.3s ease;
-  }
-  
-  .arrow img {
-    width: 70px; /* Tamaño de las flechas */
-    height: 70px;
-  }
-  
-  .left-arrow {
-    left: 0;
-  }
-  
-  .right-arrow {
-    right: 0;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 7rem;
+  padding: 1rem;
+  max-width: 1100vw;
+}
+
+/* Flechas */
+.arrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.arrow img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Flecha izquierda: posición por defecto a la izquierda */
+.left-arrow {
+  left: -40px; /* Las flechas se sacan del grid */
+}
+
+.right-arrow {
+  right: -40px; /* Las flechas se sacan del grid */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 80%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+}
+
+/* Estilo de cada tarjeta */
+.project-card {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Tarjeta destacada */
+.large-card {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.1);
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  z-index: 2;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+h3, p {
+  color:var(--eerie-black);
+}
+
+h3{
+  font-size: 1.5rem;
+}
+
+p{
+  font-size: 1.1rem;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+/* Responsivo para pantallas medianas (768px - 1200px) */
+@media (max-width: 1200px) {
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Aseguramos que haya 4 columnas */
-    gap: 20px;
-    width: 80%;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scroll-padding: 100px;
-    position: relative;
-    /* Elimina overflow: hidden; */
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
   }
-  
+
+  .arrow img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .left-arrow {
+    left: 0; /* Ajustamos la posición de la flecha izquierda */
+  }
+
+  .right-arrow {
+    right: 0; /* Ajustamos la posición de la flecha derecha */
+  }
+}
+
+/* Responsivo para pantallas pequeñas (<768px) */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
   .project-card {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0.7;
-    cursor: pointer;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    grid-column: span 1; /* Los proyectos ocupan 1 columna */
-    grid-row: span 1; /* Los proyectos ocupan 1 fila */
+    padding: 15px;
   }
-  
+
   .large-card {
-    opacity: 1;
-    cursor: pointer;
-    transform: scale(1.1);
-    grid-column: 1 / span 2; /* Ocupa las primeras 2 columnas */
-    grid-row: 1 / span 2; /* Ocupa las primeras 2 filas */
-    z-index: 2; /* Asegura que siempre esté sobre los demás proyectos */
-    margin-top: -10px; /* Ajusta según sea necesario */
-    margin-left: -10px; /* Ajusta según sea necesario */
+    grid-column: 1;
+    grid-row: auto;
   }
-  
-  .project-card:hover {
-    transform: scale(1.05);
+
+  /* Colocamos las flechas al costado del grid en pantallas pequeñas */
+  .arrow {
+    top: 30%;
+    transform: translateY(-50%);
   }
-  
-  h3, p {
-    color: black;
+
+  .left-arrow {
+    bottom: 70px;
   }
-  .project-image {
-    width: 100%; /* Hace que la imagen ocupe el ancho completo del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 8px; /* Redondea los bordes de la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+
+  .right-arrow {
+    bottom: 10px;
   }
+
+  .arrow img {
+    width: 30px;
+    height: 30px;
+  }
+}

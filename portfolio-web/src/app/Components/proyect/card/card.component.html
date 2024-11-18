@@ -1,23 +1,22 @@
 <div class="project-container">
-    <!-- Flecha izquierda con imagen -->
-    <button class="arrow left-arrow" (click)="changeProject('left')">
-      <img src="arrowIzq.png" alt="Flecha izquierda" />
-    </button>
-  
-    <!-- Galería de proyectos (Grid de proyectos) -->
-    <div class="projects-grid">
-      <div *ngFor="let project of projects; let i = index"
-           class="project-card"
-           [ngClass]="{'large-card': i === currentIndex}">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        <img [src]="project.background" alt="{{ project.title }}" class="project-image">
+  <!-- Flecha izquierda con imagen -->
+  <button class="arrow left-arrow" (click)="changeProject('left')">
+    <img src="arrowIzq.png" alt="Flecha izquierda" />
+  </button>
+
+  <!-- Galería de proyectos (Grid de proyectos) -->
+  <div class="projects-grid">
+    <div *ngFor="let project of projects; let i = index"
+         class="project-card"
+         [ngClass]="{'large-card': i === currentIndex}">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <img [src]="project.background" alt="{{ project.title }}" class="project-image">
     </div>
-    </div>
-  
-    <!-- Flecha derecha con imagen -->
-    <button class="arrow right-arrow" (click)="changeProject('right')">
-      <img src="arrowDer.png" alt="Flecha derecha" />
-    </button>
   </div>
-  
+
+  <!-- Flecha derecha con imagen -->
+  <button class="arrow right-arrow" (click)="changeProject('right')">
+    <img src="arrowDer.png" alt="Flecha derecha" />
+  </button>
+</div>
