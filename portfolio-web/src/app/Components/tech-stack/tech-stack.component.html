@@ -1,16 +1,10 @@
 <div>
     <h3>Skills</h3>
     <div class="tools-container">
-        <img class="tool-logo" src="css-icon.png" alt="CSS Logo" (click)="onTechClick('css')">
-        <img class="tool-logo" src="angular-icon.png" alt="Angular Logo" (click)="onTechClick('angular')">
-        <img class="tool-logo" src="django-icon.png" alt="Django Logo" (click)="onTechClick('django')">
-        <img class="tool-logo" src="HTML5_logo_and_wordmark.svg.png" alt="HTML5 Logo" (click)="onTechClick('html5')">
-        <img class="tool-logo" src="Mysql.svg.png" alt="MySQL Logo" (click)="onTechClick('mysql')">
-        <img class="tool-logo" src="pngwing.com.png" alt="Java Logo" (click)="onTechClick('java')">
-        <img class="tool-logo" src="Node.js_logo.svg.png" alt="Node.js Logo" (click)="onTechClick('node.js')">
-        <img class="tool-logo" src="The_C_Programming_Language_logo.svg.png" alt="C Programming Logo" (click)="onTechClick('c')">
-        <img class="tool-logo" src="Typescript_logo_2020.svg.png" alt="TypeScript Logo" (click)="onTechClick('typescript')">
-        <img class="tool-logo" src="Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript Logo" (click)="onTechClick('javascript')">
-        <img class="tool-logo" src="Python-logo-notext.svg.png" alt="Python Logo" (click)="onTechClick('python')">
+        <div class="tool-item" *ngFor="let tool of tools">
+            <img class="tool-logo" [src]="tool.logo" [alt]="tool.name" (click)="onTechClick(tool.name)">
+            <span class="tool-name">{{ tool.name }}</span>
+            <div class="tooltip">{{ tool.description }}</div> <!-- Tooltip con descripción -->
+        </div>
     </div>
 </div>

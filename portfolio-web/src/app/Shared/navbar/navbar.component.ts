@@ -16,4 +16,8 @@ navigateToHome() {
   this.router.navigate(['home']);
 }
 
+navigateToProyects() {
+  this.router.navigate(['proyects']);
+}
+
 }

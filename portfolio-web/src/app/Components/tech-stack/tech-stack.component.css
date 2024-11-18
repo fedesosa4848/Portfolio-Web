@@ -1,43 +1,81 @@
 .tools-container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(80px, 1fr)
-  ); 
-  gap: 20px; /* Espaciado entre los logos */
-  justify-items: center; /* Centra los logos horizontalmente dentro de cada celda */
-  align-items: center; /* Centra los logos verticalmente dentro de cada celda */
-  margin: 10% 25%; /* Margen superior e inferior del 10%, márgenes izquierdo y derecho del 25% */
-  justify-content: center; /* Centra el contenido de las filas incompletas */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Aumento el tamaño mínimo para que el tooltip se vea bien */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin: 5% 25%;
+  justify-content: center;
+}
+
+.tool-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .tool-logo {
-  width: 80px; /* Ancho del logo */
-  height: auto; /* Mantener la proporción */
+  width: 80px;
+  height: auto;
   transition: transform 0.3s ease;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); /* Sombra más suave */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
 .tool-logo:first-child {
-  width: 60px; /* Tamaño diferente para el primer logo */
+  width: 60px;
 }
 
 .tool-logo:hover {
-  transform: scale(1.1); /* Efecto de hover */
+  transform: scale(1.1);
+}
+
+.tool-name {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.7rem;
+}
+
+.tooltip {
+  visibility: hidden; /* Tooltip oculto por defecto */
+  opacity: 0;
+  position: absolute;
+  bottom: 120%; /* Ajusta la distancia */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0); /* Fondo oscuro */
+  color: white;
+  padding: 15px; /* Aumento el padding para dar espacio */
+  border-radius: 8px; /* Esquinas redondeadas */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 200px; /* Aumento el ancho para que no se quede en una línea */
+  font-size: 0.85rem; /* Ajusto el tamaño de la fuente */
+  text-align: left; /* Alineo el texto a la izquierda */
+  white-space: normal; /* Permite que el texto se ajuste y no se quede en una sola línea */
+}
+
+.tool-item:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (max-width: 600px) {
   .tool-logo {
-    width: 30px; /* Reducir el tamaño en pantallas pequeñas */
+    width: 40px;
   }
 
-  .tool-logo:first-child {
-    width: 30px;
+  .tool-name {
+    font-size: 0.8rem;
+  }
+
+  .tooltip {
+    width: 150px; /* Ajusto el ancho del tooltip para pantallas pequeñas */
+    font-size: 0.75rem;
   }
 }
 
-
-h3{
+h3 {
   text-align: center;
   font-size: 2rem;
 }
