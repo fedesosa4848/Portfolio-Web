@@ -8,17 +8,16 @@
   }
   
   /* Tarjetas de proyecto */
-  /* Tarjetas de proyecto */
   .project-card {
     overflow: hidden;
     width: 90%;
-    position: relative; /* Asegúrate de posicionar la tarjeta */
+    position: relative; 
 }
 
 .project-card button {
     display: none; /* El botón está oculto por defecto */
-    position: absolute; /* Asegúrate de posicionar el botón */
-    bottom: 10px; /* Ajusta según la ubicación deseada */
+    position: absolute; 
+    bottom: 10px; 
     left: 50%;
     transform: translateX(-50%);
     background-color: #4caf50;
@@ -28,7 +27,7 @@
     border: none;
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0; /* Ocultar con opacidad inicial */
+    opacity: 0; 
 }
 
 .project-card:hover {

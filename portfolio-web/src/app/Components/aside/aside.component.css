@@ -1,0 +1,37 @@
+aside {
+    background-color: var(--outer-space);
+    color: var(--white-smoke);
+    padding: 1rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;  /* Necesario para posicionar la imagen en la esquina */
+  }
+  
+  h3 {
+    color: var(--saffron);
+  }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+  
+  /* Estilos para la imagen del gif */
+  aside img {
+    position: absolute;
+    top: 10px;  /* Ajusta el espacio desde la parte superior */
+    right: 10px; /* Ajusta el espacio desde la parte derecha */
+    width: 80px; /* Tamaño de la imagen */
+    height: 80px; /* Tamaño de la imagen */
+    border-radius: 50%; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra para darle un efecto más suave */
+    opacity: 0.9; /* Hace que la imagen tenga algo de transparencia */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Suaviza el cambio de opacidad y escala */
+  }
+  
+  /* Efecto cuando el ratón pasa sobre la imagen */
+  aside img:hover {
+    opacity: 1; /* Hace que la imagen se vea completamente opaca al pasar el ratón */
+    transform: scale(1.1); /* Aumenta un poco el tamaño de la imagen al hacer hover */
+  }
+  

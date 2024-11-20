@@ -3,7 +3,8 @@
     overflow: hidden;       /* Oculta el texto que sale del contenedor */
     position: relative;     /* Necesario para animar el texto dentro del contenedor */
     background-color: #000; /* Fondo oscuro para resaltar el texto */
-    border-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
   
   .marquee-text {
