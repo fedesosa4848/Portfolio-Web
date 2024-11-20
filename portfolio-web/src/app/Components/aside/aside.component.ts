@@ -39,7 +39,7 @@ export class AsideComponent implements OnInit {
       error: () => {
         console.error('No se pudo obtener la ubicación, usando Buenos Aires por defecto.');
         this.errorMessage = 'Usando ubicación predeterminada: Buenos Aires.';
-        this.fetchWeather(this.defaultCoords.latitude, this.defaultCoords.longitude);
+        this.fetchWeather(this.newYork.latitude, this.newYork.longitude);
       }
     });
   }
@@ -79,7 +79,7 @@ export class AsideComponent implements OnInit {
         this.gifName = 'ventoso.gif';
         break;
       case 'nublado':
-        this.gifName = 'nublado.gif';
+        this.gifName = 'cloudy.gif';
         break;
       case 'parcialmente nublado':
         this.gifName = 'parcialmente-nublado.gif';

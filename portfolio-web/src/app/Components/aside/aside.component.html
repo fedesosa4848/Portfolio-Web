@@ -5,7 +5,7 @@
       <strong>{{ weather.location }}</strong>: {{ weather.temperature }}°C - {{ weather.description }}
     </p>
   
-    <!-- Aquí mostramos el gif correspondiente a la condición climática -->
+    <!-- Aca se muestra el gif correspondiente a la condición climática -->
     <div *ngIf="gifName">
       <img [src]="gifName" alt="Condición climática" />
     </div>

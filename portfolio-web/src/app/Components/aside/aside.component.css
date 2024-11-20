@@ -5,14 +5,14 @@ aside {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: relative;  /* Necesario para posicionar la imagen en la esquina */
-    max-width: 100%;  /* Asegura que el aside ocupe el ancho completo */
+    position: relative;  /*Posicionar la imagen en la esquina */
+    max-width: 100%;  
   }
   
   /* Títulos y párrafos */
   h3 {
     color: var(--saffron);
-    font-size: 1.25rem; /* Ajusta el tamaño para pantallas pequeñas */
+    font-size: 1.25rem; 
   }
   
   p {
@@ -38,10 +38,10 @@ aside {
     transform: scale(1.1); /* Aumenta un poco el tamaño de la imagen al hacer hover */
   }
   
-  /* Media Queries para pantallas más pequeñas */
+  /* Media Queries para mobile */
   @media (max-width: 480px) {
     aside {
-      padding: 0.5rem;  /* Reduce el padding en pantallas pequeñas */
+      padding: 0.5rem;  /* Reducir el padding en pantallas pequeñas */
     }
   
     h3 {
@@ -62,7 +62,7 @@ aside {
   
   @media (max-width: 768px) {
     aside {
-      padding: 1rem;  /* Ajusta el padding para pantallas medianas */
+      padding: 1rem;  /* Ajusta el padding para pantallas medianas  */
     }
   
     h3 {
