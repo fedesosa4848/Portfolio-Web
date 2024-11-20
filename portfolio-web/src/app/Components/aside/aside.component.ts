@@ -17,6 +17,13 @@ export class AsideComponent implements OnInit {
 
   // Coordenadas predeterminadas: Buenos Aires
   defaultCoords = { latitude: -34.6037, longitude: -58.3816 };
+  buenosAires = { latitude: -34.6037, longitude: -58.3816 };
+  madrid = { latitude: 40.4168, longitude: -3.7038 };
+  paris = { latitude: 48.8566, longitude: 2.3522 };
+  london = { latitude: 51.5074, longitude: -0.1278 };
+  newYork = { latitude: 40.7128, longitude: -74.0060 };
+  tokyo = { latitude: 35.6762, longitude: 139.6503 };
+  rome = { latitude: 41.9028, longitude: 12.4964 };
 
   constructor(
     private geolocationService: GeolocationService,
