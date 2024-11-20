@@ -6,10 +6,13 @@ aside {
     border-top-right-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: relative;  /* Necesario para posicionar la imagen en la esquina */
+    max-width: 100%;  /* Asegura que el aside ocupe el ancho completo */
   }
   
+  /* Títulos y párrafos */
   h3 {
     color: var(--saffron);
+    font-size: 1.25rem; /* Ajusta el tamaño para pantallas pequeñas */
   }
   
   p {
@@ -33,5 +36,57 @@ aside {
   aside img:hover {
     opacity: 1; /* Hace que la imagen se vea completamente opaca al pasar el ratón */
     transform: scale(1.1); /* Aumenta un poco el tamaño de la imagen al hacer hover */
+  }
+  
+  /* Media Queries para pantallas más pequeñas */
+  @media (max-width: 480px) {
+    aside {
+      padding: 0.5rem;  /* Reduce el padding en pantallas pequeñas */
+    }
+  
+    h3 {
+      font-size: 1.1rem; /* Ajusta el tamaño del título */
+    }
+  
+    p {
+      font-size: 0.9rem; /* Reduce el tamaño de los párrafos */
+    }
+  
+    aside img {
+      width: 60px;  /* Reduce el tamaño del gif */
+      height: 60px;
+      top: 5px;  /* Ajusta la posición */
+      right: 5px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    aside {
+      padding: 1rem;  /* Ajusta el padding para pantallas medianas */
+    }
+  
+    h3 {
+      font-size: 1.2rem; /* Ajusta el tamaño del título */
+    }
+  
+    aside img {
+      width: 70px;  /* Tamaño intermedio */
+      height: 70px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    aside {
+      padding: 1.5rem;  /* Ajusta el padding para pantallas más grandes */
+    }
+  
+    h3 {
+      font-size: 1.3rem;  /* Ajusta el tamaño del título para pantallas grandes */
+    }
+  
+    aside img {
+      width: 90px;  /* Tamaño grande */
+      height: 90px;
+    }
   }
   
