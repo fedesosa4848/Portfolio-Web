@@ -5,13 +5,13 @@ import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-carousel',
   standalone: true,
   imports: [CommonModule, CarouselModule, ButtonModule, TagModule],
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  templateUrl: './carousel.component.html',
+  styleUrl: './carousel.component.css'
 })
-export class CardComponent implements OnInit {
+export class CarouselComponent implements OnInit {
   // Arreglo de proyectos con algún ejemplo de datos
   projects = [
     { 
@@ -76,35 +76,20 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.responsiveOptions = [
-      {
-        breakpoint: '1024px',
-        numVisible: 3,
-        numScroll: 3
-      },
-      {
-        breakpoint: '768px',
-        numVisible: 2,
-        numScroll: 2
-      },
-      {
-        breakpoint: '560px',
-        numVisible: 1,
-        numScroll: 1
-      }
+      { breakpoint: '1024px', numVisible: 3, numScroll: 1 },
+      { breakpoint: '768px', numVisible: 2, numScroll: 1 },
+      { breakpoint: '560px', numVisible: 1, numScroll: 1 }
     ];
   }
 
   getSeverity(status: string): string {
     switch (status) {
-      case 'Activo':
-        return 'success'; // Verde
-      case 'En progreso':
-        return 'warning'; // Amarillo
-      case 'Finalizado':
-        return 'info'; // Azul
-      default:
-        return 'secondary'; // Gris
+      case 'Activo': return 'success';
+      case 'En progreso': return 'warning';
+      case 'Finalizado': return 'info';
+      default: return 'secondary';
     }
   }
   
 }
+
