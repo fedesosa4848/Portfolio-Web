@@ -23,7 +23,7 @@ export class TechProgressComponent {
       type: "doughnut",
       yValueFormatString: "#,###.##'%'",
       indexLabel: "{name}",
-      indexLabelFontColor: "blue",
+      indexLabelFontColor: "ghostwhite",                                      
       dataPoints: [
         { y: 0, name: "Realizado" }, // Se actualizará con el valor del progreso
         { y: 0, name: "Faltante" }, // Se actualizará con el valor faltante

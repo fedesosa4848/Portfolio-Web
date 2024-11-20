@@ -49,7 +49,7 @@
   padding: 15px; /* Aumento el padding para dar espacio */
   border-radius: 8px; /* Esquinas redondeadas */
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  width: 200px; /* Aumento el ancho para que no se quede en una línea */
+  width: 300px; /* Aumento el ancho para que no se quede en una línea */
   font-size: 0.85rem; /* Ajusto el tamaño de la fuente */
   text-align: left; /* Alineo el texto a la izquierda */
   white-space: normal; /* Permite que el texto se ajuste y no se quede en una sola línea */
