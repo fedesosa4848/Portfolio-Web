@@ -4,9 +4,11 @@
         <div class="tool-item" *ngFor="let tool of tools">
             <img class="tool-logo" [src]="tool.logo" [alt]="tool.name" (click)="onTechClick(tool.name)">
             <span class="tool-name">{{ tool.name }}</span>
-            <div class="tooltip">{{ tool.description }}</div> <!-- Tooltip con descripción -->
+            <div class="tooltip">{{ tool.description }}
+                <app-tech-progress [progress]="tool.progress"></app-tech-progress>
+            </div> <!-- Tooltip con descripción -->
         </div>
     </div>
 </div>
 
-<app-tech-progress [progress]="selectedProgress"></app-tech-progress>
+

@@ -1,150 +1,122 @@
-.project-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Contenedor principal */
+.carousel-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
   position: relative;
-  margin-top: 7rem;
-  padding: 1rem;
-  max-width: 1100vw;
+  overflow: hidden; /* Evita el scroll debajo del carrusel */
 }
 
-/* Flechas */
-.arrow {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  padding: 10px;
-  transition: opacity 0.3s ease;
-}
-
-.arrow img {
-  width: 50px;
-  height: 50px;
-}
-
-/* Flecha izquierda: posición por defecto a la izquierda */
-.left-arrow {
-  left: -40px; /* Las flechas se sacan del grid */
-}
-
-.right-arrow {
-  right: -40px; /* Las flechas se sacan del grid */
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  width: 80%;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scroll-padding: 100px;
-}
-
-/* Estilo de cada tarjeta */
+/* Tarjetas de proyecto */
+/* Tarjetas de proyecto */
 .project-card {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.7;
-  cursor: pointer;
-  padding: 20px;
-  background-color: #f5f5f5;
+  position: relative;
+  overflow: hidden;
   border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  grid-column: span 1;
-  grid-row: span 1;
+  background-color: var(--seasalt);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  transition: all 0.3s ease;
+  
+  /* Espacio entre las tarjetas */
+  margin: 0 15px; /* 15px de espacio horizontal entre tarjetas */
 }
 
-/* Tarjeta destacada */
-.large-card {
-  opacity: 1;
-  cursor: pointer;
-  transform: scale(1.1);
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-  z-index: 2;
-  margin-top: -10px;
-  margin-left: -10px;
+.project-card:hover{
+  transform:  scale(1.1);
+  z-index: 1111;
+  box-shadow: 0 0 10px var(--slate-gray);
 }
 
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-h3, p {
-  color:var(--eerie-black);
-}
-
-h3{
-  font-size: 1.5rem;
-}
-
-p{
-  font-size: 1.1rem;
+/* Contenedor de imagen */
+.project-image-container {
+  position: relative;
 }
 
 .project-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Tag de estado del proyecto */
+.project-tag {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+
+/* Detalles del proyecto */
+.project-details {
+  text-align: center;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: var(--slate-gray);
+}
+
+/* Estilos para los indicadores */
+::ng-deep .p-carousel-indicator {
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo oscuro y suave para los inactivos */
+  border-radius: 50%;
+  width: 12px; /* Tamaño más grande */
+  height: 12px;
+  margin: 0 5px; /* Espacio entre los indicadores */
+  transition: background-color 0.3s, transform 0.3s; /* Efectos de transición */
+}
+
+::ng-deep .p-carousel-indicator.p-highlight {
+  background-color: blue; /* Indicador activo de color azul */
+  transform: scale(1.2); /* Agrandar el indicador activo */
+}
+
+/* Estilos para las flechas */
+/* Estilos para las flechas */
+::ng-deep .p-carousel-prev,
+::ng-deep .p-carousel-next {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para las flechas */
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Centra las flechas verticalmente */
+  z-index: 10;
+  cursor: pointer;
+}
+
+::ng-deep .p-carousel-prev {
+  left: 0; /* Posiciona la flecha izquierda */
+}
+
+::ng-deep .p-carousel-next {
+  right: 0; /* Posiciona la flecha derecha */
 }
 
 
-/* Responsivo para pantallas medianas (768px - 1200px) */
-@media (max-width: 1200px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    width: 60%;
-  }
-
-  .arrow img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .left-arrow {
-    left: 0; /* Ajustamos la posición de la flecha izquierda */
-  }
-
-  .right-arrow {
-    right: 0; /* Ajustamos la posición de la flecha derecha */
-  }
+::ng-deep .p-carousel-prev:hover, .p-carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Responsivo para pantallas pequeñas (<768px) */
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .project-card {
-    padding: 15px;
-  }
-
-  .large-card {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  /* Colocamos las flechas al costado del grid en pantallas pequeñas */
-  .arrow {
-    top: 30%;
-    transform: translateY(-50%);
-  }
-
-  .left-arrow {
-    bottom: 70px;
-  }
-
-  .right-arrow {
-    bottom: 10px;
-  }
-
-  .arrow img {
-    width: 30px;
-    height: 30px;
-  }
+/* Evitar overflow por el uso de las flechas */
+::ng-deep .p-carousel .p-carousel-content {
+  overflow: hidden;
 }

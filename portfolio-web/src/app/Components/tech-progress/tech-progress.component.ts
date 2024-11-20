@@ -15,6 +15,7 @@ export class TechProgressComponent {
   // Configuración del gráfico, con valores dinámicos de progreso y faltante
   chartOptions = {
     animationEnabled: true,
+    backgroundColor: "transparent",
     title: {
       text: "Progreso"
     },
@@ -22,6 +23,7 @@ export class TechProgressComponent {
       type: "doughnut",
       yValueFormatString: "#,###.##'%'",
       indexLabel: "{name}",
+      indexLabelFontColor: "blue",
       dataPoints: [
         { y: 0, name: "Realizado" }, // Se actualizará con el valor del progreso
         { y: 0, name: "Faltante" }, // Se actualizará con el valor faltante

@@ -19,6 +19,7 @@ a {
     font-weight: bold;
     text-align: center;
     transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease; /* Añade transiciones suaves para color y fondo */
+    cursor: pointer;
 }
 
 a:hover {
