@@ -1,0 +1,35 @@
+.projects-header {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-header h2 {
+    font-size: 2rem;
+    color: var(--saffron); /* Usamos un tono cálido para destacar el encabezado */
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .projects-header p {
+    font-size: 1.1rem;
+    color: var(--white-smoke); /* Color suave para el texto */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects-header ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .projects-header ul li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: var(--silver); /* Un gris elegante para el texto de la lista */
+  }
+  
+  .projects-header ul li strong {
+    color: var(--imperial-red); /* Resaltamos los títulos con un rojo vibrante */
+    font-weight: bold;
+  }
+  
