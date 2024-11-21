@@ -22,8 +22,8 @@ aside {
   /* Estilos para la imagen del gif */
   aside img {
     position: absolute;
-    top: 10px;  /* Ajusta el espacio desde la parte superior */
-    right: 10px; /* Ajusta el espacio desde la parte derecha */
+    top: 30px;  /* Ajusta el espacio desde la parte superior */
+    right: 30px; /* Ajusta el espacio desde la parte derecha */
     width: 80px; /* Tamaño de la imagen */
     height: 80px; /* Tamaño de la imagen */
     border-radius: 50%; /* Bordes redondeados */
@@ -35,7 +35,7 @@ aside {
   /* Efecto cuando el ratón pasa sobre la imagen */
   aside img:hover {
     opacity: 1; /* Hace que la imagen se vea completamente opaca al pasar el ratón */
-    transform: scale(1.1); /* Aumenta un poco el tamaño de la imagen al hacer hover */
+    transform: scale(1.3); /* Aumenta un poco el tamaño de la imagen al hacer hover */
   }
   
   /* Media Queries para mobile */
